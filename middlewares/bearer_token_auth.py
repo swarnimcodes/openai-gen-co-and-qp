@@ -8,9 +8,17 @@ async def bearer_token_auth(request: Request, call_next):
     try:
         headers = request.headers
         authorization = headers.get("authorization", None)
-        if not authorization or "bearer" not in authorization.lower():
+        if not authorization:
             print("No bearer token sent!")
             raise HTTPException(status_code=401, detail="No Bearer Token sent.")
+        if "bearer" not in authorization.lower():
+            print(
+                "Bearer Token sent via incorrect format. Format should be `Bearer <token>`."
+            )
+            raise HTTPException(
+                status_code=401,
+                detail="Bearer Token sent via incorrect format. Format should be `Bearer <token>`.",
+            )
         bearer_token = authorization.split()[1]
         print(bearer_token)
         if bearer_token != BEARER_TOKEN:
