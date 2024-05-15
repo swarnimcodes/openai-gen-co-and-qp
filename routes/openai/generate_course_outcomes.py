@@ -22,12 +22,12 @@ async def gen_course_outcomes(data: Dict[str, Any] = Body(...)):
                     "role": "system",
                     "content": """
                         You are a detailed course outcome generator. 
-                        Generate exactly 10 course outcomes. No more, no less.
-                        You will be provided syllabus/handout of a course and you need to generate 10 appropriate JSON formatted course outcomes in meticulous detail as to what the students should be able to do after completing the course.
+                        Generate exactly the number of course outcomes (n) as you are being asked of. No more, no less.
+                        You will be provided syllabus/handout of a course and you need to generate `n` appropriate JSON formatted course outcomes in meticulous detail as to what the students should be able to do after completing the course.
                         Attach a list of applicable Blooms Taxonomy tags applicable per course outcome.
                         Attach course outcome number.
                         Give a short title to the course outcome as well.
-                        Generate exactly 10 course outcomes. No more, no less.
+                        Generate exactly `n` course outcomes. No more, no less.
 
                         Generate the outcomes with lightning speed as speed is paramount.
 

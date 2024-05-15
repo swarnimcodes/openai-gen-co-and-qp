@@ -1,7 +1,8 @@
 from fastapi import Request, HTTPException
 from fastapi.responses import JSONResponse
 
-BEARER_TOKEN = "?jn0TNpAdEgk!aT:)nyLx,<i=F;7D3i2L%6A2oxz[&8Cbj1U;o+lw!?6G~DKp0"
+# BEARER_TOKEN = "?jn0TNpAdEgk!aT:)nyLx,<i=F;7D3i2L%6A2oxz[&8Cbj1U;o+lw!?6G~DKp0"
+BEARER_TOKEN = "fqItdRnpqHT7nBvSAFvXBT1yTC6GJN3tOHDKINxzpNMFfkudzQjyQOVDi49wjXym"
 
 
 async def bearer_token_auth(request: Request, call_next):
